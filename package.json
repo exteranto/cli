@@ -1,0 +1,30 @@
+{
+  "name": "@exteranto/cli",
+  "version": "1.0.0",
+  "description": "The CLI for the Exteranto Framework.",
+  "main": "index.js",
+  "bin": {
+    "ext": "bin/exteranto.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "extension",
+    "framework",
+    "exteranto",
+    "cli"
+  ],
+  "author": {
+    "name": "Pavel Koch",
+    "email": "kouks.koch@gmail.com",
+    "url": "https://pavelkoch.io"
+  },
+  "repository": "github:exteranto/cli",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "execa": "^1.0.0"
+  }
+}
