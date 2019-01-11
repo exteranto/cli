@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ for (var script of it.background.scripts) { }}
+      <script src="{{= script}}"></script>
+    {{ } }}
+  </head>
+</html>

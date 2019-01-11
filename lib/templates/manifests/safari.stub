@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>{{= it.author || '' }}</string>
+	<key>Builder Version</key>
+	<string>14606.2.104.1.1</string>
+	<key>CFBundleDisplayName</key>
+	<string>{{= it.name }}</string>
+	<key>CFBundleIdentifier</key>
+	<string>{{= it.safari.bundle_id }}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>{{= it.version }}</string>
+	<key>CFBundleShortVersionString</key>
+	<string>{{= it.version }}</string>
+	<key>CFBundleVersion</key>
+	<string>{{= it.version }}</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>openOverlay</string>
+				<key>Identifier</key>
+				<string>{{= it.name }}</string>
+				<key>Image</key>
+				<string>{{= it.icons[Object.keys(it.icons)[0]] }}</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>{{= it.name }}</string>
+				<key>Tool Tip</key>
+				<string>{{= it.name }}</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Companion Bundle Identifier</key>
+	<array>
+		<string>{{= it.version }}</string>
+	</array>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+        {{ for (var script of it.content_scripts || []) { }}
+          {{ for (var js of script.js || []) { }}
+            <string>{{= js }}</string>
+          {{ } }}
+        {{ } }}
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>{{= it.description || '' }}</string>
+	<key>DeveloperIdentifier</key>
+	<string>{{= it.safari.developer_id }}</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>{{= it.safari.update_manifest_url || '' }}</string>
+</dict>
+</plist>

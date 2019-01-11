@@ -1,0 +1,3 @@
+{{ var man = Object.assign({}, it); }}
+{{ delete man.safari; }}
+{{= JSON.stringify(man) }}
