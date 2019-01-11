@@ -13,6 +13,24 @@ program
   .action(require('../lib/create.js'))
 
 program
+  .command('build')
+  .usage('[options]')
+  .option(
+    '-e, --env, --environment [env]',
+    'specify the environment',
+    /(prod|stage|dev)/,
+    'prod'
+  )
+  .option(
+    '-b, --browsers [browsers]',
+    'specify the browsers',
+    val => val.toLowerCase().split(/[^a-z]+/),
+    ['chrome', 'safari', 'extensions']
+  )
+  .description('Build your Exteranto project for a specified browser and environment.')
+  .action(require('../lib/build.js'))
+
+program
   .arguments('<command>')
   .action((cmd) => {
     console.log(chalk.red(`Unknown command ${chalk.yellow(cmd)}.`))
