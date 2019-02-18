@@ -1,6 +1,6 @@
 {
   "name": "@exteranto/cli",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "The CLI for the Exteranto Framework.",
   "main": "index.js",
   "bin": {
@@ -38,6 +38,7 @@
     "vue-loader": "^15.6.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.6",
-    "webpack": "^4.29.5"
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   }
 }
