@@ -27,8 +27,30 @@ program
     val => val.toLowerCase().split(/[^a-z]+/),
     ['chrome', 'safari', 'extensions']
   )
+  .option(
+    '-n, --no-compile',
+    'whether to skip compilation'
+  )
   .description('Build your Exteranto project for a specified browser and environment.')
   .action(require('../lib/build.js'))
+
+program
+  .command('watch')
+  .usage('[options]')
+  .option(
+    '-e, --env, --environment [env]',
+    'specify the environment',
+    /(prod|stage|dev)/,
+    'prod'
+  )
+  .option(
+    '-b, --browsers [browsers]',
+    'specify the browsers',
+    val => val.toLowerCase().split(/[^a-z]+/),
+    ['chrome', 'safari', 'extensions']
+  )
+  .description('Watch changes for your Exteranto project for a specified browser and environment.')
+  .action(require('../lib/watch.js'))
 
 program
   .arguments('<command>')
