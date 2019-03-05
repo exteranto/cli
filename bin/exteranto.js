@@ -18,7 +18,7 @@ program
   .option(
     '-e, --env, --environment [env]',
     'specify the environment',
-    /(prod|stage|dev)/,
+    /([a-z]+)/,
     'prod'
   )
   .option(
