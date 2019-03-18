@@ -1,3 +1,5 @@
 {{ var man = Object.assign({}, it); }}
+{{ if (man.options_page) { man.options_ui = { page: man.options_page } } }}
+{{ delete man.options_page; }}
 {{ delete man.safari; }}
 {{= JSON.stringify(man) }}
