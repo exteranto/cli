@@ -5,7 +5,7 @@ const program = require('commander')
 
 program
   .version(require('../package').version, '-v, --version')
-  .usage('<command> [options]')
+  .usage('ext <command> [options]')
 
 program
   .command('create <name>')
@@ -57,5 +57,9 @@ program
   .action((cmd) => {
     console.log(chalk.red(`Unknown command ${chalk.yellow(cmd)}.`))
   })
+
+if (!process.argv.slice(2).length) {
+  program.help()
+}
 
 program.parse(process.argv)
