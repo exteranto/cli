@@ -40,7 +40,7 @@ program
   .option(
     '-e, --env, --environment [env]',
     'specify the environment',
-    /(prod|stage|dev)/,
+    /(prod|dev)/,
     'prod'
   )
   .option(
@@ -51,6 +51,25 @@ program
   )
   .description('Watch changes for your Exteranto project for a specified browser and environment.')
   .action(require('../lib/watch.js'))
+
+
+program
+  .command('zip')
+  .usage('[options]')
+  .option(
+    '-e, --env, --environment [env]',
+    'specify the environment',
+    /(prod|dev)/,
+    'prod'
+  )
+  .option(
+    '-b, --browsers [browsers]',
+    'specify the browsers',
+    val => val.toLowerCase().split(/[^a-z]+/),
+    ['chrome', 'safari', 'extensions']
+  )
+  .description('Zip the compiled packs.')
+  .action(require('../lib/zip.js'))
 
 program
   .arguments('<command>')
