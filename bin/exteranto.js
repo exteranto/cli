@@ -68,6 +68,10 @@ program
     val => val.toLowerCase().split(/[^a-z]+/),
     ['chrome', 'safari', 'extensions']
   )
+  .option(
+    '-n, --no-compile',
+    'whether to skip compilation'
+  )
   .description('Zip the compiled packs.')
   .action(require('../lib/zip.js'))
 
