@@ -1,6 +1,6 @@
 {
   "name": "@exteranto/cli",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "The CLI for the Exteranto Framework.",
   "main": "index.js",
   "bin": {
