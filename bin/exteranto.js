@@ -25,7 +25,7 @@ program
     '-b, --browsers [browsers]',
     'specify the browsers',
     val => val.toLowerCase().split(/[^a-z]+/),
-    ['chrome', 'safari', 'extensions']
+    ['chrome', 'safari', 'extensions', 'edge']
   )
   .option(
     '-n, --no-compile',
@@ -47,7 +47,7 @@ program
     '-b, --browsers [browsers]',
     'specify the browsers',
     val => val.toLowerCase().split(/[^a-z]+/),
-    ['chrome', 'safari', 'extensions']
+    ['chrome', 'safari', 'extensions', 'edge']
   )
   .description('Watch changes for your Exteranto project for a specified browser and environment.')
   .action(require('../lib/watch.js'))
@@ -66,7 +66,7 @@ program
     '-b, --browsers [browsers]',
     'specify the browsers',
     val => val.toLowerCase().split(/[^a-z]+/),
-    ['chrome', 'safari', 'extensions']
+    ['chrome', 'safari', 'extensions', 'edge']
   )
   .option(
     '-n, --no-compile',
